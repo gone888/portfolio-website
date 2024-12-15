@@ -1,0 +1,270 @@
+:root {
+  --primary-color: #6161fe;
+  --secondary-color: #2824ff;
+  --dark-grey: #2b2b2b;
+  --white: #ffffff;
+  --white-purple: #eee8ff;
+  --light-purple: #bbafe4;
+  --dark-purple: #341D7B;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* general element design */
+header {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+li {
+  font-size: 20px;
+  line-height: 1.5;
+  list-style-type: none;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* header & footer section */
+.page-header {
+  display:flex;
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--white-purple);
+}
+
+.logo {
+  display: block;
+  margin: auto;
+  width: 380px;
+  height: 60px;
+}
+
+.page-header__item {
+  flex: 0 1 200px;
+}
+
+.page-header .page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.page-footer {
+  clear:both;
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* navigation bar */
+.navigation-list {
+  list-style-type: none;
+}
+.navigation-list li {
+  display: inline-block;
+  font-size: 26px;
+  padding: 10px;
+  margin: 0 auto;
+}
+.navigation-list li .navigation-list__item--active {
+  text-decoration: none;
+}
+
+/* index.html */
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile__portrait {
+  float: left;
+  height: auto;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.profile__text {
+  flex: 1 1 100px;
+}
+
+/* about.html */
+.about-me {
+  text-align: center;
+}
+
+.about-list {
+  list-style-type: none;
+  padding: 0%;
+}
+
+/* contact.html */
+.contact-info {
+  display:block;
+  text-align: center;
+  margin: auto;
+  padding: 0%;
+}
+
+/* work.html */
+.grid__item {
+  display: inline-block;
+  width: 33%;
+}
+
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 0;
+ 
+  }
+  .grid__item {
+    background-color: var(--white-purple);
+    width: auto;
+    min-height: auto;
+    margin: 0;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+}
+
+/* buttons */
+button, .button{
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: opacity 0.7s;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus { 
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* animations for boston-skyline.svg */
+svg * {
+  transform-box: fill-box;
+}
+
+svg {
+  width: 800px;
+  height: 533.33px;
+  display: block;
+  margin: 0 auto;
+}
+
+.freepik-credit {
+  text-align: center;
+}
+
+@keyframes color-change {
+  0% {
+    fill: var(--white-purple)
+  }
+  50% {
+    fill: var(--light-purple)
+  }
+  100% {
+    fill: var(--dark-purple)
+  }
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(20px, 0px);
+  }
+  to {
+    transform: translate(120px, 0px);
+  }
+}
+
+@keyframes cloud-move-reverse{
+  from {
+    transform: translate(0px, -20px);
+  }
+  to{
+    transform: translate(-100px, -20px);
+  }
+}
+
+.cloud-left {
+  animation: 34s cloud-move infinite alternate linear;
+}
+
+.cloud-right {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+.boston-logo {
+  animation: 1s color-change 1 alternate linear;
+}
+
+/* media queries */
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
