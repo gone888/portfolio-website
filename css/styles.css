@@ -212,10 +212,16 @@ svg * {
 }
 
 svg {
-  width: 800px;
   height: 533.33px;
+  width: 800px;
+  overflow:hidden;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
+}
+
+.svg-boston-logo {
+  width: 100%;
+  height: 100%;
 }
 
 .freepik-credit {
