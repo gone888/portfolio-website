@@ -127,10 +127,14 @@ a:hover {
 
 /* contact.html */
 .contact-info {
-  display: block;
+  display: inline-block;
   text-align: center;
   margin: auto;
   padding: 0%;
+}
+
+.link-container {
+  margin: 100px;
 }
 
 /* work.html */
