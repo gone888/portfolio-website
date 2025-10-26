@@ -115,6 +115,18 @@ a:hover {
   flex: 1 1 100px;
 }
 
+.skills {
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+}
+
+.skills__item {
+  list-style-type: disc;
+}
+
 /* about.html */
 .about-me {
   text-align: center;
@@ -214,7 +226,7 @@ svg * {
 svg {
   height: 533.33px;
   width: 800px;
-  overflow:hidden;
+  overflow: hidden;
   display: block;
   margin: 10px auto;
 }
